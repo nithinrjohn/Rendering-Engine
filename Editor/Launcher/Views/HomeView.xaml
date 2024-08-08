@@ -1,0 +1,30 @@
+<UserControl x:Class="Editor.Launcher.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Editor.Launcher.Views"
+             xmlns:vm="clr-namespace:Editor.Launcher.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Border CornerRadius="10" Background="#375e86"/>
+
+            <Label Content="Engine" FontSize="72" FontFamily="{StaticResource ConcertOne}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,150" Foreground="#feead3"/>
+
+            <Button Content="&#xe9a8;" FontFamily="{StaticResource Hio}" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,120,0" Style="{StaticResource IconButtonTheme}" Command="{Binding NavOpenCommand}" Foreground="#feead3"/>
+            <Label Content="Open" FontSize="36" FontFamily="{StaticResource ConcertOne}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,120,0" Foreground="#feead3"/>
+        
+            <Button Content="&#xe9a9;" FontFamily="{StaticResource Hio}" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="120,0,0,0" Style="{StaticResource IconButtonTheme}" Command="{Binding NavNewCommand}" Foreground="#feead3"/>
+            <Label Content="New" FontSize="36" FontFamily="{StaticResource ConcertOne}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="120,100,0,0" Foreground="#feead3"/>
+        
+            <Button Content="&#xea27;" FontFamily="{StaticResource Hio}" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5" Style="{StaticResource IconButtonTheme}" Click="OnQuit" Foreground="#feead3"/>
+            <Button Content="&#xe9d2;" FontFamily="{StaticResource Hio}" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5,5,30,5" Style="{StaticResource IconButtonTheme}" Click="OnMin" Foreground="#feead3"/>
+
+            <Button Content="&#xe979;" FontFamily="{StaticResource Hio}" FontSize="36" Style="{StaticResource IconButtonTheme}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Foreground="#feead3"/>
+            <Button Content="&#xe9bf;" FontFamily="{StaticResource Hio}" FontSize="36" Style="{StaticResource IconButtonTheme}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="60,10,10,10" Foreground="#feead3"/>
+        
+        </Grid>
+    </Grid>
+</UserControl>

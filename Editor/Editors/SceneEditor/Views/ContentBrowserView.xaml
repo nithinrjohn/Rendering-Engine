@@ -1,0 +1,39 @@
+<UserControl x:Class="Editor.Editors.SceneEditor.Views.ContentBrowserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Editor.Editors.SceneEditor.Views"
+             xmlns:vm="clr-namespace:Editor.Editors.SceneEditor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!-- Hierarchical Data Template for displaying directories -->
+        <HierarchicalDataTemplate DataType="{x:Type vm:DirectoryNode}" ItemsSource="{Binding Items}">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Icon}" FontFamily="{StaticResource His}" FontSize="18" Foreground="{Binding Color}"/>    
+                <TextBlock Text="{Binding Name}" Foreground="White" FontFamily="{StaticResource ConcertOne}" FontSize="18" VerticalAlignment="Center"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        
+        <!-- Data Template for displaying files -->
+        <DataTemplate DataType="{x:Type vm:FileNode}">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Icon}" FontFamily="{StaticResource His}" FontSize="18" Foreground="{Binding Color}"/>
+                <TextBlock Text="{Binding Name}" Foreground="White" FontFamily="{StaticResource ConcertOne}" FontSize="18"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Button Content="&#xe9dc;" FontFamily="{StaticResource Hio}" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource IconButtonTheme}" Foreground="LightBlue" Click="OnAdd" Panel.ZIndex="1"/>
+
+        <TreeView BorderThickness="0" ItemsSource="{Binding RootDirectoryAsList}" Background="Transparent">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="Focusable" Value="False" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+    </Grid>
+</UserControl>

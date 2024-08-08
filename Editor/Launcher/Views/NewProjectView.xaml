@@ -1,0 +1,42 @@
+<UserControl x:Class="Editor.Launcher.Views.NewProjectView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Editor.Launcher.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border CornerRadius="10" Background="#375e86"/>
+
+        <Label Content="New Project" FontSize="36" FontFamily="{StaticResource ConcertOne}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25" Foreground="#feead3"/>
+
+        <Border x:Name="TwoBorder" CornerRadius="10" Width="150" Height="150" BorderBrush="Transparent" BorderThickness="8" Margin="0,0,180,100">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/Launcher/Images/link2d.png"/>
+            </Border.Background>
+        </Border>
+        <ToggleButton x:Name="TwoButton" Width="150" Height="150" Margin="0,0,180,100" Click="OnDem" Style="{StaticResource TransparentButtonTheme}"/>
+        <Label Content="2D" FontSize="36" FontFamily="{StaticResource ConcertOne}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,180,0" Foreground="#feead3"/>
+
+        <Border x:Name="ThreeBorder" CornerRadius="10" Width="150" Height="150" BorderBrush="#feead3" BorderThickness="8" Margin="180,0,0,100">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/Launcher/Images/link3d.png"/>
+            </Border.Background>
+        </Border>
+        <ToggleButton x:Name="ThreeButton" IsChecked="True" Width="150" Height="150" Margin="180,0,0,100" Click="OnDem" Style="{StaticResource TransparentButtonTheme}"/>
+        <Label Content="3D" FontSize="36" FontFamily="{StaticResource ConcertOne}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="180,100,0,0" Foreground="#feead3"/>
+
+        <TextBox GotFocus="OnNameBoxGotFocus" Name="NameBox" Visibility="Visible" Tag="Name" Foreground="Black" Width="250" Height="40" Margin="0,200,0,0" Style="{StaticResource TextBoxTheme}"/>
+        <TextBox GotFocus="OnPathBoxGotFocus" Name="PathBox" Visibility="Visible" Tag="Path" Foreground="Black" Width="250" Height="40" Margin="0,300,0,0" Style="{StaticResource TextBoxTheme}"/>
+
+        <Button Content="&#xe996;" FontFamily="{StaticResource Hio}" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="300,300,0,0" Style="{StaticResource IconButtonTheme}" Click="OnBrowse" Foreground="#feead3"/>
+        
+        <Button Content="&#xea27;" FontFamily="{StaticResource Hio}" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5" Style="{StaticResource IconButtonTheme}" Click="OnQuit" Foreground="#feead3"/>
+        <Button Content="&#xe9d2;" FontFamily="{StaticResource Hio}" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5,5,30,5" Style="{StaticResource IconButtonTheme}" Click="OnMin" Foreground="#feead3"/>
+
+        <Button Content="&#xe90d;" FontFamily="{StaticResource Hio}" FontSize="36" Style="{StaticResource IconButtonTheme}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Command="{Binding NavBackCommand}" Foreground="#feead3"/>
+        <Button Content="&#xe963;" FontFamily="{StaticResource Hio}" FontSize="36" Style="{StaticResource IconButtonTheme}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Click="OnCheck" Foreground="#feead3"/>
+
+    </Grid>
+</UserControl>
